@@ -1,14 +1,14 @@
 ---
-- name: asdf
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
   hosts: ios
-  gather_facts: no
-  
-  tasks:
+  gather_facts: false
 
-    - name: Merge provided configuration with device configuration
-      ios_l3_interfaces:
-        config:
-          - name: GigabitEthernet3/3
-            ipv4:
-            - address: 192.168.0.1/24
-              secondary: True
+  tasks:
+    - name: RUN SHOW COMMAND
+      cli_command:
+        command: "{{show_interfaces}}"
+      register: command_output
+
+    - name: PRINT TO TERMINAL WINDOW
+      debug:
+        msg: "{{command_output.stdout}}"
