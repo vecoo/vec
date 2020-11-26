@@ -10,4 +10,4 @@
         lines:
           - description test interface
           - ip address 172.31.1.1 255.255.255.0
-        parents: interface Ethernet1
+        parents: interface GigabitEthernet3/3
