@@ -1,7 +1,7 @@
 ---
 - name: asdf
   hosts: ios
-  gather_facts: no
+  gather_facts: yes
   
   tasks:
 
