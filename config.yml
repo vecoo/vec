@@ -5,10 +5,10 @@
   
   tasks:
 
-    - name: configure interface settings
-      ios_config:
-        authorize: yes
-        lines:
-          - description test interface
-          - ip address 172.31.1.1 255.255.255.0
-        parents: interface GigabitEthernet3/3
+    - name: Merge provided configuration with device configuration
+      ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet3/3
+            ipv4:
+            - address: 192.168.0.1/24
+              secondary: True
