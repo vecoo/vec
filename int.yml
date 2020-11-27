@@ -1,0 +1,14 @@
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: ios
+  gather_facts: false
+
+  tasks:
+    - name: configure ip helpers on multiple interfaces
+      ios_config:
+        lines:
+          - ip helper-address 172.26.1.10
+          - ip helper-address 172.26.3.8
+        parents: "{{ item }}"
+      with_items:
+        - interface GigabitEthernet3/3
