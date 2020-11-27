@@ -4,12 +4,14 @@
   gather_facts: false
 
   tasks:
-    - name: configure ip helpers on multiple interfaces
+    - name: load new acl into device
       ios_config:
         lines:
-          - no sw
-          - ip helper-address 172.26.1.10
-          - ip helper-address 172.26.3.8
-        parents: "{{ item }}"
-      with_items:
-        - interface GigabitEthernet3/3
+          - 10 permit ip host 192.0.2.1 any log
+          - 20 permit ip host 192.0.2.2 any log
+          - 30 permit ip host 192.0.2.3 any log
+          - 40 permit ip host 192.0.2.4 any log
+          - 50 permit ip host 192.0.2.5 any log
+        parents: ip access-list extended test
+        before: no ip access-list extended test
+        match: exact
