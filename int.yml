@@ -8,6 +8,6 @@
       ios_config:
         lines:
           - no switchport
-          - description test interface
+          - description ios-config module
           - ip address 172.31.1.1 255.255.255.0
-        parents: interface Gig2/2
+        parents: interface Gig1/2
