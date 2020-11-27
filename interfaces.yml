@@ -1,0 +1,19 @@
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: ios
+  gather_facts: false
+  tasks:
+
+- name: Merge provided configuration with device configuration
+  ios_interfaces:
+    config:
+      - name: GigabitEthernet3/3
+        description: 'Configured and Merged by Ansible Network'
+        enabled: True
+      - name: GigabitEthernet2/2
+        description: 'Configured and Merged by Ansible Network'
+        mtu: 2800
+        enabled: False
+        speed: 100
+        duplex: full
+    state: merged
