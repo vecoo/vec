@@ -10,10 +10,4 @@
       - name: GigabitEthernet3/3
         description: 'Configured and Merged by Ansible Network'
         enabled: True
-      - name: GigabitEthernet2/2
-        description: 'Configured and Merged by Ansible Network'
-        mtu: 2800
-        enabled: False
-        speed: 100
-        duplex: full
     state: merged
