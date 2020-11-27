@@ -4,11 +4,11 @@
   gather_facts: false
 
   tasks:
-    - name: RUN SHOW COMMAND
-      cli_command:
-        command: "{{show_interfaces}}"
-      register: command_output
-
-    - name: PRINT TO TERMINAL WINDOW
-      debug:
-        msg: "{{command_output.stdout}}"
+    - name: configure the login banner
+      ios_banner:
+        banner: login
+        text: |
+          this is my login banner
+          that contains a multiline
+          string
+        state: present
