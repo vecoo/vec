@@ -7,6 +7,7 @@
     - name: configure ip helpers on multiple interfaces
       ios_config:
         lines:
+          - no sw
           - ip helper-address 172.26.1.10
           - ip helper-address 172.26.3.8
         parents: "{{ item }}"
