@@ -1,0 +1,9 @@
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: ios
+  gather_facts: false
+
+  tasks:
+    - name: configure top level configuration
+      ios_config:
+        lines: hostname "vec"
