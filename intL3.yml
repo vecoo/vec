@@ -10,5 +10,5 @@
         config:
           - name: GigabitEthernet3/3
             ipv4:
-            - address: 9.9.9.9/24
+            - address: 19.9.9.9/24
         state: replaced
