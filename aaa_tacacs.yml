@@ -4,10 +4,16 @@
   gather_facts: false
   
   tasks:
-
-    - name: AAA
+         
+          
+    - name: AAA Server 1
       ios_config:
         lines:
-          - aaa authentication login default group ISE local none
-          - aaa authentication enable default group ISE enable none
+          - address ipv4 192.168.99.250
+          - key asdf
+        parents: tacacs server ISE01
+
+
+    
+
 
