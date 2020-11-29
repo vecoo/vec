@@ -8,17 +8,6 @@
     - name: AAA
           ios_config:
             lines:
-              - username local privilege 15 password 0 asdf
-              - username helpdesk password 0 asdf
-              - aaa new-model
               - aaa authentication login default group ISE local none
               - aaa authentication enable default group ISE enable none
-              - aaa authorization config-commands
-              - aaa authorization exec default group ISE local none
-              - aaa authorization commands 0 default group ISE local none
-              - aaa authorization commands 1 default group ISE local none
-              - aaa authorization commands 7 default group ISE local none
-              - aaa authorization commands 15 default group ISE local none
-              - aaa accounting exec default start-stop group ISE
-              - aaa accounting commands 7 default start-stop group ISE
-              - aaa accounting commands 15 default start-stop group ISE
+
