@@ -9,9 +9,10 @@
     - name: AAA Server 1
       ios_config:
         lines:
+          - tacacs server ISE01
           - address ipv4 192.168.99.250
           - key asdf
-        parents: tacacs server ISE01
+      #  parents: tacacs server ISE01
 
 
     
