@@ -6,8 +6,8 @@
   tasks:
 
     - name: AAA
-          ios_config:
-            lines:
-              - aaa authentication login default group ISE local none
-              - aaa authentication enable default group ISE enable none
+      ios_config:
+        lines:
+          - aaa authentication login default group ISE local none
+          - aaa authentication enable default group ISE enable none
 
