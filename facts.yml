@@ -7,3 +7,7 @@
     - name: Gather all legacy facts
       ios_facts:
         gather_subset: all
+      register: output 
+        
+    - name: DISPLAY THE OUTPUT
+      debug: var=output.stdout
