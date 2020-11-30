@@ -4,17 +4,15 @@
   gather_facts: false
   
   tasks:
-         
-          
-    - name: AAA Server 1
+    - name: OSPF Process
       ios_config:
         lines:
-          - tacacs server ISE01
-          - address ipv4 192.168.99.250
-          - key asdf
-      #  parents: tacacs server ISE01
+          - "tacacs server ISE01"
 
-
-    
-
+    - name: OSPF Process - Router ID
+      ios_config:
+        lines: 
+          - "address ipv4 192.168.99.250"
+          - "key asdf"
+        parents: tacacs server ISE01
 
